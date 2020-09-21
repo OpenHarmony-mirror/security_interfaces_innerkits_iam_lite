@@ -24,14 +24,13 @@
 #if __cplusplus
 extern "C" {
 #endif
-#endif /* __cplusplus */
+#endif
 
-typedef struct IpcAuthInterface IpcAuthInterface;
-struct IpcAuthInterface {
+typedef struct {
     INHERIT_IUNKNOWN;
     int (*GetCommunicationStrategy)(RegParams params, PolicyTrans **policies, unsigned int *policyNum);
     int (*IsCommunicationAllowed)(AuthParams params);
-};
+} IpcAuthInterface;
 
 #ifdef __cplusplus
 #if __cplusplus
